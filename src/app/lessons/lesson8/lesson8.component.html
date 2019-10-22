@@ -1,0 +1,80 @@
+<app-top-menu></app-top-menu>
+
+<div class="container bg-white mt-5 pl-5 pr-5 mb-5">
+
+<div class="row pt-5 pb-5">
+    <div class="col-sm-12">
+    <h1 class="title">USB-stick</h1>
+    </div>
+</div>
+    
+
+<!--start block of step-->
+<div class="block-step">
+<div class="row"><h3>Mounting usb-stick with hands</h3></div>
+
+<div class="row">
+    <p class="col-sm-12">Mount usb-stick</p>
+</div>    
+
+<div class="row">
+<div class="col-sm-12 code pl-1-important">
+    <code class="text-dark">
+    
+        yaourt -S ntfs-3g <br>
+        lsblk <br>
+        sudo mkdir /mnt/my_usb/ <br>
+        sudo mount /dev/sdd /mnt/my_usb <br>
+        cd /mnt/my_usb <br>
+
+    </code></div>
+</div>       
+    
+
+<div class="row"><h3>Automatically mounting usb-stick</h3></div>
+
+<div class="row">
+    <p class="col-sm-12">Mount usb-stick automatically</p>
+</div>    
+
+<div class="row">
+<div class="col-sm-12 code pl-1-important">
+    <code class="text-dark">
+        yaourt -S ntfs-3g <br>
+        yaourt -S thunar-volman
+        yaourt -S udiskie  <br>
+
+    </code></div>
+</div>       
+
+
+<div class="row">
+        <p class="col-sm-12">Configure thunar-volame After installing the plugin "thunar-volman"</p>
+    </div>    
+
+    <div class="row">
+            <div class="col-sm-12 code pl-1-important">
+                <code class="text-dark">
+                        1. Launch Thunar and go to Edit -> Preferences<br>
+                        2. Under the 'Advanced' tab, check 'Enable Volume Management' <br>
+                        3. Click configure and check the following items:<br>
+                               Mount removable drives when hot-plugged.<br>
+                               Mount removable media when inserted.<br>
+                </code></div>
+            </div>  
+
+            <div class="row">
+                    <p class="col-sm-12">Execute magic command for automatically connecting usb-stick</p>
+                </div>    
+            
+                <div class="row">
+                        <div class="col-sm-12 code pl-1-important">
+                            <code class="text-dark">
+                                    udiskie -2 -s & 
+                            </code></div>
+                        </div>  
+
+
+    
+
+</div>

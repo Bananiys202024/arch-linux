@@ -1,0 +1,260 @@
+<app-top-menu></app-top-menu>
+
+<div class="container bg-white mt-5 pl-5 pr-5 mb-5">
+
+<div class="row pt-5 pb-5">
+    <div class="col-sm-12">
+    <h1 class="title">Install Arch linux</h1>
+    </div>
+</div>
+    
+
+<!--start block of step-->
+<div class="block-step">
+<div class="row"><h3>Step 1. Connecting wi-fi</h3></div>
+<div class="row">
+        <p class="col-sm-12">First of all we need unlock wifi, for connecting to internet</p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">rfkill unblock all</code></div>
+</div>
+
+<div class="row">
+        <p class="col-sm-12">Find wi-fi. You should input next command and then choose wifi for connecting. Don't use in wifi this character "-"</p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">wifi-menu</code></div>
+</div>
+
+</div> 
+<!--end block of step-->
+
+
+<!--start block of step-->
+<div class="block-step">
+        <div class="row"><h3>Step 2. Partionating disk</h3></div>
+        <div class="row">
+                <p class="col-sm-12">Partionating. Im my case, "sda" is main my disk, disk of computer.</p>
+        </div>    
+        
+        <div class="row">
+            <div class="col-sm-12 code pl-1-important"><code class="text-dark">gdisk /dev/sda</code></div>
+        </div>
+        
+        <div class="row">
+                <p class="col-sm-12">Then create new table</p>
+        </div>    
+        
+        <div class="row">
+            <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">o</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">Then do all following action, as on image.</p>
+        </div>    
+
+        <img class="img-fluid mt-5 mb-5" src="assets/img/1.jpg" alt="screen of instruction">
+        
+        <div class="row">
+                <p class="col-sm-12">You can print following command to revise changes</p>
+        </div>    
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">lsblk</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">Then you should create encrypted part of disk. In my case "sda2" is my second disk</p>
+        </div>    
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">cryptsetup -y  luksFormat /dev/sda2</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">Go open our created encrypted part of disk</p>
+        </div>    
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">cryptsetup open /dev/sda2 cryptroot</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">Create file system on ecnrypted part of disk</p>
+        </div>    
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">mkfs.ext4 /dev/mapper/cryptroot</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">Then simple do following commands:</p>
+        </div>    
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">mount /dev/mapper/cryptroot /mnt</code></div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">cd /mnt</code></div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">mkdir boot </code></div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">mkfs.vfat /dev/sda1</code></div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">mount /dev/sda1 /mnt/boot</code></div>
+        </div>
+
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">pacstrap /mnt</code></div>
+        </div>
+
+</div> 
+        <!--end block of step-->
+
+
+        <!--start block of step-->
+<div class="block-step">
+        <div class="row"><h3>Step 3. Install</h3></div>
+        <div class="row">
+                <p class="col-sm-12">Go to installed arch</p>
+        </div>    
+        
+        <div class="row">
+            <div class="col-sm-12 code pl-1-important"><code class="text-dark">arch-chroot /mnt</code></div>
+        </div>
+        
+        <div class="row">
+                <p class="col-sm-12">Installing all standart files</p>
+        </div>    
+        
+        <div class="row">
+            <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">bootctl install</code></div>
+        </div>
+        
+ </div> 
+        <!--end block of step-->
+
+
+        <!--start block of step-->
+<div class="block-step">
+        <div class="row"><h3>Step 3.</h3></div>
+        <div class="row">
+                <p class="col-sm-12">Intall vim editor</p>
+        </div>    
+        
+        <div class="row">
+            <div class="col-sm-12 code pl-1-important"><code class="text-dark">pacman -S vim</code></div>
+        </div>
+        
+        <div class="row">
+                <p class="col-sm-12">Intall packages for working wifi after installation</p>
+        </div>    
+        
+        <div class="row">
+            <div class="col-sm-12 code pl-1-important"><code class="text-dark">pacman -S dialect netctl networkmanager</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">For adding to core of support ecrypt ,  we should add line "encrypt" in file "/etc/mkinitcpio.conf" as shown below </p>
+        </div>    
+        
+        <img class="img-fluid mt-5 mb-5" src="assets/img/3.jpg" alt="screen of instruction">
+
+        <div class="row">
+                <p class="col-sm-12">Then go to /boot/loader and edit following file "loader.conf" with command:
+                </p>
+        </div>    
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">vim loader.conf</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">After edit i got something like this
+                </p>
+        </div>    
+
+        <img class="img-fluid mt-5 mb-5" src="assets/img/2.jpg" alt="screen of instruction">
+
+
+        <div class="row">
+                <p class="col-sm-12">Then go to entries with following command and create file and then edit that file:
+                </p>
+        </div>  
+        
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">"cd entries/</code></div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">touch arch.conf</code></div>
+        </div>
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">vim arch.conf</code></div>
+        </div>
+
+        <div class="row">
+                <p class="col-sm-12">I got following after edit "arch.conf". For get UUID you need input following command to vim, you need input that command right to vim, command will display in bottom of vim:
+                </p>
+        </div>  
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">r !blkid</code></div>
+        </div>
+
+        <img class="img-fluid mt-5 mb-5" src="assets/img/4.jpg" alt="screen of instruction">
+
+
+        <div class="row">
+                <p class="col-sm-12">result of file arch.conf:
+                </p>
+        </div>  
+
+        <img class="img-fluid mt-5 mb-5" src="assets/img/5.jpg" alt="screen of instruction">
+
+
+ </div> 
+        <!--end block of step-->
+
+
+
+<!--start block of step-->
+<div class="block-step">
+        <div class="row"><h3>Step 4. Rebuild core</h3></div>
+
+        <div class="row">
+               <div class="col-sm-12 code pl-1-important"><code class="text-dark">mkinitcpio -p linux</code></div>
+        </div>
+        
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">exit</code></div>
+            </div>
+
+        <div class="row">
+                <div class="col-sm-12 code pl-1-important"><code class="text-dark">reboot</code></div>
+        </div>
+
+
+        
+        <div class="row mb-5 pb-5">
+                <p class="col-sm-12 mb-5">Вынимаем флешку</p>
+        </div>  
+
+        </div> 
+        <!--end block of step-->
+
+</div>

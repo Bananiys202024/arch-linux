@@ -1,0 +1,128 @@
+<app-top-menu></app-top-menu>
+
+<div class="container bg-white mt-5 pl-5 pr-5 mb-5">
+
+<div class="row pt-5 pb-5">
+    <div class="col-sm-12">
+    <h1 class="title">TimeZone, screen-shot, Archive manager</h1>
+    </div>
+</div>
+    
+
+<div class="block-step">
+
+   
+
+    <div class="row"><h3> Archive Manager</h3></div>
+
+
+    <div class="row">
+        <p class="col-sm-12">Installing Archive Manager</p>
+    </div>    
+    
+    <div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">yaourt -S file-roller</code></div>
+    </div>  
+
+    <div class="row">
+        <p class="col-sm-12">For access to archive(zip) open from console If archive manager doesn't display contain of archive, then change extenson to zip and add following command for apply to file "file"</p>
+    </div>    
+    
+    <div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">sudo chmod 777 file</code></div>
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">sudo thunar .</code></div>
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">change extentsion file to zip</code></div>
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">open...</code></div>
+    </div>  
+
+    <div class="row">
+        <p class="col-sm-12">For extract archive "file.rar":</p>
+    </div>    
+    
+    <div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">
+        yaourt -S unrar <br>
+        unrar x file.rar <br>
+    </code></div>
+    </div>  
+
+    
+    
+    
+
+
+
+
+
+
+
+
+
+    <div class="row"><h3>TimeZone</h3></div>
+
+
+    <div class="row">
+        <p class="col-sm-12">Setting languages and locale. You can toggle language by ctr_alt.</p>
+    </div>    
+
+    <div class="row">
+         <div class="col-sm-12 code pl-1-important"><code class="text-dark">localectl --no-convert set-x11-keymap us,ru,de "" "" grp:ctrl_alt_toggle</code></div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 code pl-1-important"><code class="text-dark">timedatectl set-timezone Europe/Kiev</code></div>
+    </div>
+
+
+    <div class="row">
+            <p class="col-sm-12">Setting locale for displaying right UTF-8, for example: display russian charaacters in archive-manager, for more information click <a href="https://wiki.archlinux.org/index.php/Locale">Here</a></p>
+     </div>    
+
+    <div class="row">
+        <p class="col-sm-12">Uncomment in /etc/locale.gen following lines</p>
+    </div>    
+    
+    <div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">de_DE.UTF-8</code></div>
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">en_US.UTF-8</code></div>
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">ru_UA.UTF-8</code></div>
+
+
+    </div>  
+
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">Generate: locale-gen</code></div>
+    
+<div class="row">
+        <div class="col-sm-12 code pl-1-important"><code class="text-dark">Checking locale: locale -a</code></div>
+<div class="col-sm-12 code pl-1-important"><code class="text-dark">localectl set-locale LANG=en_US.UTF-8, LANG=ru_UA.UTF-8, LANG=de_DE.UTF-8</code></div>
+</div>  
+
+
+
+
+
+
+<div class="row"><h3>ScreenShot</h3></div>
+
+<div class="row">
+    <p class="col-sm-12">I do screenshot with scrot.</p>
+</div>    
+
+
+<div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">yaourt -S scrot</code></div>
+</div>
+
+<div class="row">
+        <p class="col-sm-12">For use. Scrot saving images in current directory, where was used scrot, more info <a href="https://wiki.archlinux.org/index.php/Taking_a_screenshot_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)">Here</a></p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">scrot -t 20 -d 5</code></div>
+</div>       
+
+             
+        
+
+
+</div>

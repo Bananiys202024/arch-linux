@@ -1,0 +1,115 @@
+<app-top-menu></app-top-menu>
+
+<div class="container bg-white mt-5 pl-5 pr-5 mb-5">
+
+<div class="row pt-5 pb-5">
+    <div class="col-sm-12">
+    <h1 class="title">Install i3 + tuning status bar</h1>
+    </div>
+</div>
+    
+
+<!--start block of step-->
+<div class="block-step">
+<div class="row"><h3>i3 + status bar</h3></div>
+<div class="row">
+        <p class="col-sm-12">Install all required packages, not under root. You should do this command from created user, non-root user.</p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">pacman -S xorg-init xorg-server </code></div>
+</div>
+
+<div class="row">
+        <div class="col-sm-12 code pl-1-important"><code class="text-dark">yaourt -S ttf-font-awesome
+
+            </code></div>
+    </div>
+
+<div class="row">
+        <p class="col-sm-12">Intalling i3wm and input number 2</p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">pacman -S i3wm</code></div>
+</div>
+
+</div> 
+
+<div class="row">
+                <p class="col-sm-12">Add to /etc/X11/xinit/xinitrc following line, an get something next as on picture</p>
+        </div>   
+
+        <div class="row">
+                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">exec i3</code></div>
+                    </div>
+
+    <img class="img-fluid mt-5 mb-5" src="./assets/img/7.jpg" alt="screen of instruction"/>
+
+    <div class="row">
+                <p class="col-sm-12">For start we should input next command</p>
+        </div>   
+
+        <div class="row">
+                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">startx</code></div>
+                    </div>
+
+                    <div class="row">
+                                <p class="col-sm-12">Now we go edit status-bar for that we need create ".xinitrc" in our home directory, in my case is following directory "home/banan", so we do next commands</p>
+                        </div>  
+
+                        <div class="row">
+                                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">cd /etc/X11/xinit/</code></div>
+                                    </div>                
+
+
+                        <div class="row">
+                                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">cp xinitrc /home/banan/</code></div>
+                                    </div>        
+                                    
+                        <div class="row">
+                                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">cd /etc/i3/</code></div>
+                                    </div>           
+
+                                    <div class="row">
+                                                <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">cp config /home/banan/</code></div>
+                                            </div>       
+                                            
+                                            <div class="row">
+                                                        <p class="col-sm-12">You can download code of  "/etc/i3/config" below, you cam add list of starting programms on starting i3  in the end of i3cconfig, as on exemple below:</p>
+                                                </div>     
+                                                
+                                                <div class="row">
+                                                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">exec program1</code></div>
+                                                    </div>        
+
+                                                <div class="row">
+                                                        <p class="col-sm-12">File i3status.conf is responsible for display status bar in bottom of your screen</p>
+                                                </div>   
+
+                                                <div class="row">
+                                                        <p class="col-sm-12 mt-4">Install thunar</p>
+                                                </div>   
+
+                                                <div class="row">
+                                                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">yaourt -S thunar</code></div>
+                                                    </div>        
+
+                                             
+
+                                                <div class="row  mt-3 pb-5">
+                                                                <button (click)="downloadFile('i3config.txt')" class=" btn btn-primary mr-3 mb-2">Download "/etc/i3/config"</button>
+                                                                <button (click)="downloadFile('i3status.conf.txt')" class=" btn btn-primary mb-2">Download "/etc/i3status.conf"</button>            
+                                                </div>          
+                                                 
+                                                        
+                                                        
+        
+                                                       
+                                                            
+        
+<!--end block of step-->
+
+
+
+</div>

@@ -1,0 +1,78 @@
+<app-top-menu></app-top-menu>
+
+<div class="container bg-white mt-5 pl-5 pr-5 mb-5">
+
+<div class="row pt-5 pb-5">
+    <div class="col-sm-12">
+    <h1 class="title">Tuning arch after installation</h1>
+    </div>
+</div>
+    
+
+<!--start block of step-->
+<div class="block-step">
+<div class="row"><h3>Connecting sudo</h3></div>
+<div class="row">
+        <p class="col-sm-12">Adding user to group, where banan is name of user, which i want create</p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">useradd -m -g users -G audio.lp.optical.power.scanner.storage.video.wheel -s /bin/bash banan</code></div>
+</div>
+
+<div class="row">
+        <p class="col-sm-12">Install password for user</p>
+</div>    
+
+<div class="row">
+    <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">passwd banan</code></div>
+</div>
+
+<div class="row">
+                <p class="col-sm-12">Install sudo</p>
+        </div>   
+
+<div class="row">
+                <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">pacman -S sudo</code></div>
+            </div>
+
+            <div class="row">
+                        <p class="col-sm-12">Go edit file "/etc/sudoers" from root user and i edited a on picture below</p>
+                </div>   
+
+
+<div class="row">
+                <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">vim etc/sudoers</code></div>
+            </div>
+
+            <img class="img-fluid mt-5 mb-5" src="assets/img/6.jpg" alt="screen of instruction"/>
+
+
+</div> 
+<!--end block of step-->
+
+<!--start block of step-->
+<div class="block-step">
+        <div class="row"><h3>Install yaourt(AUR)</h3></div>
+        
+        <div class="row">
+                        <div class="col-sm-12 code pl-3 pl-1-important"><code class="text-dark">
+                            sudo pacman -S --needed base-devel git wget yajl <br>
+                            cd /tmp <br>
+                            git clone https://aur.archlinux.org/package-query.git <br>
+                            cd package-query/ <br>
+                            makepkg -si && cd /tmp/ <br>
+                            git clone https://aur.archlinux.org/yaourt.git <br>
+                            cd yaourt/ <br>
+                            makepkg -si <br>
+                        </code></div>
+                    </div>
+        
+        
+        
+        </div> 
+        <!--end block of step-->
+
+
+
+</div>
