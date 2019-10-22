@@ -30,7 +30,6 @@
             "styles": [
               "src/styles.scss",
               "node_modules/bootstrap/dist/css/bootstrap.min.css"
-
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.min.js",
@@ -99,11 +98,8 @@
             ],
             "styles": [
               "src/styles.scss"
-
             ],
-            "scripts": [
-            
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -130,8 +126,13 @@
               "devServerTarget": "arch-linux:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {}
         }
       }
-    }},
+    }
+  },
   "defaultProject": "arch-linux"
 }
