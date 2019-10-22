@@ -15,4 +15,4 @@ You can revise it here: https://bananiys202024.github.io/arch-linux/
 
 In next time of building 
 
-    ng build --prod
+    sudo ng build --prod
