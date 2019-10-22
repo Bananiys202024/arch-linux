@@ -16,3 +16,5 @@ You can revise it here: https://bananiys202024.github.io/arch-linux/
 In next time of building 
 
     sudo ng build --prod
+    
+Last step drag and drop dist/arch-linux to /arch-linux
