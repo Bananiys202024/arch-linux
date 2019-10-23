@@ -17,4 +17,4 @@ In next time of building
 
     sudo ng build --prod
     
-Last step drag and drop dist/arch-linux to /arch-linux
+Last step drag and drop dist/arch-linux to /arch-linux on github in gh-pages branch
