@@ -31,6 +31,32 @@
     <div class="col-sm-12 code pl-1-important"><code class="text-dark">cp [Source] [Target]</code></div>
     </div>  
 
+  
+  
+<!--start block of step-->
+<div class="block-step">
+<div class="row"><h3>Automatically connect wifi on boot</h3></div>
+
+<div class="row">
+    <p class="col-sm-12">You should use netctl. It is the Arch Linux built in network management system. If it isn't already installed (it should be though), run </p>
+</div>    
+
+<div class="row">
+<div class="col-sm-12 code pl-1-important"><code class="text-dark">pacman -Syu netctl</code></div>
+  <div class="col-sm-12 code pl-1-important"><code class="text-dark">cd /etc/netctl/</code></div>
+<div class="col-sm-12 code pl-1-important"><code class="text-dark">cp /etc/netctl/example/wireless-wpa /etc/netctl/somedescriptivename</code></div>
+
+</div>  
+
+<div class="row">
+        <p class="col-sm-12">then edit /etc/netctl/somedescriptivename</p>
+    </div>    
+    
+    <div class="row">
+    <div class="col-sm-12 code pl-1-important"><code class="text-dark">systemctl enable netctl-auto@wlan0.service</code></div>
+    </div>  
+
+  
  <!--start block of step-->
 <div class="block-step">
 <div class="row"><h3>Some notes to yourself about web</h3></div>
